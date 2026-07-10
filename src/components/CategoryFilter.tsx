@@ -25,7 +25,7 @@ export function CategoryFilter({ selected, onSelect }: CategoryFilterProps) {
             'flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 border',
             selected === cat.id
               ? 'bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/25'
-              : 'bg-white/60 dark:bg-white/10 text-gray-600 dark:text-gray-300 border-white/50 dark:border-white/20 hover:bg-white/80 dark:hover:bg-white/20 backdrop-blur-sm'
+              : 'bg-white/70 dark:bg-white/10 text-gray-600 dark:text-gray-300 border-gray-200/60 dark:border-white/20 hover:bg-white/90 dark:hover:bg-white/20 backdrop-blur-sm shadow-sm'
           )}
           aria-label={`Filter by ${cat.name}`}
           aria-pressed={selected === cat.id}

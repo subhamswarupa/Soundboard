@@ -3,7 +3,7 @@ import { useLocalStorage } from './useLocalStorage'
 import { useKeyboardShortcuts } from './useKeyboardShortcuts'
 import { Sound, AppSettings, RecentSound, SoundState } from '@/types'
 import { sounds } from '@/utils/sounds'
-import { playSound, getSoundDuration } from '@/utils/soundEngine'
+import { playSound, getSoundDuration, stopSound, stopAllSounds } from '@/utils/soundEngine'
 
 export function useSoundBoard() {
   const [settings, setSettings] = useLocalStorage<AppSettings>('soundboard-settings', {
@@ -58,6 +58,7 @@ export function useSoundBoard() {
       clearTimeout(activeTimeouts.current.get(id))
       activeTimeouts.current.delete(id)
     }
+    stopSound(id)
     setActiveSounds(prev => ({
       ...prev,
       [id]: { isPlaying: false, startTime: null, duration: prev[id]?.duration ?? 1 },
@@ -65,6 +66,7 @@ export function useSoundBoard() {
   }, [])
 
   const stopAll = useCallback(() => {
+    stopAllSounds()
     activeTimeouts.current.forEach(timeout => clearTimeout(timeout))
     activeTimeouts.current.clear()
     setActiveSounds(prev => {

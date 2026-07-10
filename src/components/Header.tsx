@@ -26,7 +26,7 @@ export function Header({
 }: HeaderProps) {
   return (
     <motion.header
-      className="sticky top-0 z-40 backdrop-blur-xl bg-white/60 dark:bg-gray-900/60 border-b border-white/30 dark:border-white/10"
+      className="sticky top-0 z-40 backdrop-blur-xl bg-white/70 dark:bg-gray-900/70 border-b border-gray-200/50 dark:border-white/10"
       initial={{ y: -80 }}
       animate={{ y: 0 }}
       transition={{ type: 'spring', stiffness: 120, damping: 20 }}
@@ -35,28 +35,27 @@ export function Header({
         <div className="flex items-center justify-between gap-4">
           {/* Logo area */}
           <motion.div
-            className="flex items-center gap-2 shrink-0"
+            className="flex items-center gap-1.5 shrink-0 select-none"
             whileHover={{ scale: 1.02 }}
           >
-            <div className="w-10 h-10">
+            <div className="hidden sm:block w-7 h-7 pointer-events-none">
               <Mascot />
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-lg font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent leading-tight">
+              <h1 className="text-base font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent leading-tight">
                 Soundboard
               </h1>
-              <p className="text-[10px] text-gray-400 dark:text-gray-500 leading-tight">Interactive Mixer</p>
             </div>
           </motion.div>
 
           {/* Controls */}
           <div className="flex items-center gap-2 md:gap-3 flex-wrap justify-end">
             {/* Volume */}
-            <div className="flex items-center gap-1.5 bg-white/50 dark:bg-white/5 rounded-full px-3 py-1.5 backdrop-blur-sm">
+            <div className="flex items-center gap-1.5 bg-white/70 dark:bg-white/10 border border-gray-200/40 dark:border-white/10 rounded-full px-3 py-1.5 backdrop-blur-sm">
               <motion.button
                 whileTap={{ scale: 0.9 }}
                 onClick={onToggleMute}
-                className="p-1 rounded-full hover:bg-white/50 dark:hover:bg-white/10 transition-colors"
+                className="p-1 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-200/50 dark:hover:bg-white/10 transition-colors"
                 aria-label={isMuted ? 'Unmute' : 'Mute'}
               >
                 {isMuted || volume === 0 ? <VolumeX size={16} /> : <Volume2 size={16} />}
@@ -68,7 +67,7 @@ export function Header({
                 step="0.01"
                 value={isMuted ? 0 : volume}
                 onChange={(e) => onVolumeChange(parseFloat(e.target.value))}
-                className="w-20 md:w-24 h-1.5 rounded-full appearance-none cursor-pointer bg-gray-200 dark:bg-gray-700 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3.5 [&::-webkit-slider-thumb]:h-3.5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-purple-500 [&::-webkit-slider-thumb]:shadow-md"
+                className="w-20 md:w-24 h-1.5 rounded-full appearance-none cursor-pointer bg-gray-300 dark:bg-gray-600 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3.5 [&::-webkit-slider-thumb]:h-3.5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-purple-500 [&::-webkit-slider-thumb]:shadow-md"
                 aria-label="Volume slider"
               />
             </div>

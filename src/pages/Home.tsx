@@ -107,7 +107,7 @@ export function Home({
 
         {/* Stats bar */}
         <motion.div
-          className="flex items-center gap-3 mb-6 text-xs text-gray-400 dark:text-gray-500"
+          className="flex items-center gap-3 mb-6 text-xs text-gray-500 dark:text-gray-400"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
@@ -156,7 +156,7 @@ export function Home({
 
         {/* Keyboard shortcuts hint */}
         <motion.div
-          className="mt-8 text-center text-xs text-gray-400 dark:text-gray-600"
+          className="mt-8 text-center text-xs text-gray-500 dark:text-gray-400"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
@@ -164,7 +164,7 @@ export function Home({
           <p>
             Press keys{' '}
             {['1','2','3','4','5','6','7','8','9','Q','W','E'].map((k, i) => (
-              <kbd key={i} className="px-1.5 py-0.5 bg-white/50 dark:bg-white/10 rounded text-[10px] font-mono mx-0.5">
+              <kbd key={i} className="px-1.5 py-0.5 bg-gray-200/60 dark:bg-white/10 rounded text-[10px] font-mono mx-0.5 text-gray-600 dark:text-gray-400">
                 {k}
               </kbd>
             ))}{' '}

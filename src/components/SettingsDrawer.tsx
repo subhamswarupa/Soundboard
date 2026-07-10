@@ -157,7 +157,7 @@ export function SettingsDrawer({
                     <div className="grid grid-cols-2 gap-1 text-xs text-gray-500 bg-white/50 rounded-xl p-3">
                       {sounds.map(s => (
                         <div key={s.id} className="flex items-center gap-1.5">
-                          <kbd className="px-1.5 py-0.5 bg-gray-100 rounded text-[10px] font-mono min-w-[18px] text-center">
+                          <kbd className="px-1.5 py-0.5 bg-gray-200/70 rounded text-[10px] font-mono min-w-[18px] text-center text-gray-700">
                             {s.shortcut}
                           </kbd>
                           <span>{s.name}</span>

@@ -85,7 +85,7 @@ export function SoundCard({ sound, isPlaying, isFavorite, onToggle, onFavorite, 
               size={16}
               className={cn(
                 'transition-colors',
-                isFavorite ? 'fill-red-500 text-red-500' : 'text-gray-400 dark:text-gray-500'
+                isFavorite ? 'fill-red-500 text-red-500' : 'text-gray-500 dark:text-gray-400'
               )}
             />
           </motion.button>
@@ -95,11 +95,11 @@ export function SoundCard({ sound, isPlaying, isFavorite, onToggle, onFavorite, 
       <div className="mb-2">
         <div className="flex items-center justify-between">
           <h3 className="font-semibold text-sm text-gray-800 dark:text-gray-100">{sound.name}</h3>
-          <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/50 dark:bg-white/10 text-gray-500 dark:text-gray-400">
+          <span className="text-[10px] px-2 py-0.5 rounded-full bg-gray-200/60 dark:bg-white/10 text-gray-600 dark:text-gray-400">
             {sound.shortcut}
           </span>
         </div>
-        <p className="text-[11px] text-gray-400 dark:text-gray-500 mt-0.5">{getCategoryLabel(sound.category)}</p>
+        <p className="text-[11px] text-gray-500 dark:text-gray-400 mt-0.5">{getCategoryLabel(sound.category)}</p>
       </div>
 
       <div className="flex items-center justify-between">
